@@ -1,0 +1,27 @@
+logging:
+  config: classpath:configuration/logback-spring.xml
+  file:
+    name: log/trasure_hunt.log
+  level:
+    root: info
+
+micronaut:
+  application:
+    name: trasure-hunt
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+
+game:
+  maps-directory: "maps"
+  map-rows: 5
+  map-cols: 5
+  map-column-delimiter: " "
+  output-delimiter: "\n"
+  missing-treasure-message: "NO TREASURE"
+  graph-search-algorithm: "BFS"
